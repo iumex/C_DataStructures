@@ -100,7 +100,7 @@ struct list_item* remove_item(struct list_item** head, struct list_item* item)
     unsigned int current_count = current_item->count;
 
     // The item to remove is the head of the linked list
-    if(current_item == item && previous_item == NULL)
+    if(current_item == item)
     {   
         *head = (*head)->next;
         current_item->next = NULL;
