@@ -81,10 +81,28 @@ struct list_item* list_pop(struct list_item** head)
     current_head->next = NULL;
 
     //return current_head;
-    return *head;
-    
+    return *head;    
 }
 
+// Function to add an element to the head of the list. The added element becomes the new head
+struct list_item* list_add(struct list_item** head, struct list_item* item)
+{
+    if(!(*head))
+    {
+        *head = item;
+        (*head)->next = NULL;       
+        (*head)->count = 1;
+        return item;        
+    }
+
+    unsigned int current_count = (*head)->count;
+    item->next = *head;
+    *head = item;
+    (*head)->count = current_count + 1;
+
+    //return item;
+    return *head;
+}
 
 // Function to remove an element of the linked list, given its address
 struct list_item* remove_item(struct list_item** head, struct list_item* item)
@@ -130,6 +148,38 @@ struct list_item* remove_item(struct list_item** head, struct list_item* item)
   
     //return current_item;        
     return *head;
+}
+
+// Function to print the reversed list
+struct list_item* reverse_list(struct list_item** head)
+{
+    if(!(*head))
+    {
+        return NULL;
+    }
+
+    struct list_item* current_item = *head;
+    struct list_item* last_item = NULL;
+    struct list_item* new_head = NULL;
+    
+    while(current_item)
+    {       
+        last_item = current_item;
+        current_item = current_item->next;      
+        list_add(&new_head, last_item);               
+    }
+
+    struct int_item* new_int_item = (struct int_item*)new_head;
+
+    printf("Reversed List: \n");
+
+    while(new_int_item)
+    {
+        printf("Element Value: %d\n", new_int_item->value);
+        new_int_item = (struct int_item*)new_int_item->list_item.next;
+    }   
+
+    return new_head;
 }
 
 
