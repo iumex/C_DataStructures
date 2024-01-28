@@ -80,8 +80,8 @@ struct list_item* list_pop(struct list_item** head)
 
     current_head->next = NULL;
 
-    return current_head;
-    
+    //return current_head;
+    return *head;
     
 }
 
@@ -105,7 +105,9 @@ struct list_item* remove_item(struct list_item** head, struct list_item* item)
         *head = (*head)->next;
         current_item->next = NULL;
         (*head)->count = current_count - 1;
-        return current_item;        
+        
+        //return current_item;        
+        return *head;        
     }
     
     // The item to remove is not the head of the linked list
@@ -118,14 +120,16 @@ struct list_item* remove_item(struct list_item** head, struct list_item* item)
             current_item->next = NULL;    
             (*head)->count = current_count - 1;
             
-            return current_item;
+            //return current_item;        
+            return *head;
         }       
        
         previous_item = current_item;
         current_item = current_item->next;        
     }
   
-    return current_item;
+    //return current_item;        
+    return *head;
 }
 
 
