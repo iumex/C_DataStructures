@@ -173,6 +173,8 @@ struct list_item* reverse_list(struct list_item** head)
 
     printf("Reversed List: \n");
 
+    printf("Number of elements: %d\n", new_head->count);
+
     while(new_int_item)
     {
         printf("Element Value: %d\n", new_int_item->value);
