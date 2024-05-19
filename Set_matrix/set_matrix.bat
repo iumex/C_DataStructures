@@ -1,0 +1,1 @@
+clang.exe -o bin\set_matrix.exe src\*.c -I include
