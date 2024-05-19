@@ -1,1 +1,0 @@
-clang.exe -o dict_string_int.exe .\dict_string_int.c
