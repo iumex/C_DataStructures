@@ -1,0 +1,1 @@
+clang.exe -o bin\doubly_linked_lists.exe src\*.c -I include
