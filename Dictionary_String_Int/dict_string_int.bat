@@ -1,0 +1,1 @@
+clang.exe -o bin\dict_string_int.exe src\*.c -I include
