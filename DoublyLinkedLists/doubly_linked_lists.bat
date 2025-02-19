@@ -1,1 +1,1 @@
-clang.exe -o bin\doubly_linked_lists.exe src\*.c -I include
+clang.exe -o DoublyLinkedLists/bin\doubly_linked_lists.exe DoublyLinkedLists/src\*.c -I DoublyLinkedLists/include
